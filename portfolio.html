@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+  <head>
+    <title>Applid - Portfolio</title>
+    <meta name="description" content="Pablo Lazo's portfolio. Applid Design">
+    <meta name=viewport content="width=device-width, initial-scale=.6">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+  </head>
+  <body>
+    <div id="overlay">
+      <div id="full_desc">
+      </div>
+      <div id="exit_desc">
+        <i class="fa fa-2x fa-times-circle"></i>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="sidebar">
+        <div class="logo">
+          <a href="/"><img src="img/a.png"></a>
+        </div>
+        <div class="face">
+        <img src="img/face.png" width="100">
+        <h1>Pablo Lazo</h1>
+        </div>
+        <div class="bio">
+          <span>I'm a Chilean web developer based in Washington, DC.
+          Working towards becoming a great developer.</span>
+        </div>
+        <div class="bottom_links">
+          <a href="skype:pablo.ls"><i class="fa fa-skype fa-lg"></i><span>pablo.ls</span></a>
+          <a href="http://twitter.com/lazopm"><i class="fa fa-twitter fa-lg"></i><span>twitter.com/lazopm</span></a>
+          <a href="http://github.com/lazopm"><i class="fa fa-github fa-lg"></i><span>github.com/lazopm</span></a>
+          <a href="mailto:lazopm@gmail.com"><i class="fa fa-envelope fa-lg"></i><span>lazopm@gmail.com</span></a>
+        </div>
+      </div>
+      <div class="projects_wrapper">
+        <div class="projects">
+          {% for project in projects %}
+          <div class="pjct_wrapper" data-project="{{project.key.id()}}">
+            <ul class="icons">
+              {% for tag in project.tags %}
+              <li class="{{ tag }}"></li>
+              {% endfor %}
+            </ul>
+            <div class="pjct_cover" style='background-image:url("/image?id={{ project.key.id() }}")'>
+              <div class="pjct_title"><span>{{ project.title }}</span></div>
+              <div class="pjct_desc"><span>{{ project.description }}</span></div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="copyright">
+      built by Pablo Lazo © 2015
+      </div>
+
+    </div>
+  </div>
+
+<script type="text/javascript" src="js/portfolio.js"></script>
+</body>
+</html>
+{% endautoescape %}

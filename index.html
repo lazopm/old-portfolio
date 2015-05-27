@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+  <head>
+    <title>Applid Design</title>
+    <meta name="description" content="Applid web design and development. Pablo Lazo">
+    <meta name=viewport content="width=device-width, initial-scale=.7">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="main_wrapper">
+        <div class="container main">
+          <div class="row">
+            <div class="col-md-12 main_logo">
+              <a href=""><img class="img-responsive logo center-block" src="img/logo150.png"></a>
+            </div>
+            <div class="col-md-4 col-sm-3 col-xs-2"></div>
+            <div class="col-md-4 col-sm-6 col-xs-8 main_content">
+              <div class="group1">
+                <p class="type1">
+                  Hey! I'm Pablo.<br>
+                <p>
+                <p class="type2">
+                  I make web stuff.<br>
+                </p>
+                <p class="type3">
+                  Check out my <a href="portfolio">portfolio</a>,<br>
+                </p>
+                <p class="type4">
+                  or drop me a <a style="cursor: pointer;" onclick="newMessage()">line</a>.
+                </p>
+              </div>
+              <div class="group2" style="display: none">
+                <span class="premsg">NAME</span>
+                <span class="msgarea"></span>
+                <textarea class="invismsg"></textarea>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-3 col-xs-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom_links">
+      <a href="http://github.com/lazopm"><i class="fa fa-github fa-2x"></i><span>github.com/lazopm</span></a>
+      <a href="skype:pablo.ls"><i class="fa fa-skype fa-2x"></i><span>pablo.ls</span></a>
+      <a href="http://twitter.com/lazopm"><i class="fa fa-twitter fa-2x"></i><span>twitter.com/lazopm</span></a>
+      <a href="mailto:lazopm@gmail.com"><i class="fa fa-envelope fa-2x"></i><span>lazopm@gmail.com</span></a>
+    </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script language="javascript" type="text/javascript" src="js/index.js"></script>
+  </body>
+</html>
+{% endautoescape %}

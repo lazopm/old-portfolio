@@ -1,0 +1,290 @@
+@import 'reset'
+@import 'variables'
+
+
+html, body
+  height: 100%
+body
+  font-family: $font-stack
+  background-color: $offwhite
+  //background-image: repeating-linear-gradient(45deg, #D0D0D0, #D0D0D0 2px, #E0E0E0 2px, #dadada 60px)
+#overlay
+  height: 100%
+  width: 100%
+  background: rgba(0, 0, 0, 0.76)
+  position: fixed
+  z-index: 200
+  visibility: hidden
+  text-align: center
+  opacity: 0
+  transition-property: opacity
+  transition-duration: .5s
+  #exit_desc
+    z-index: 300
+    position: fixed
+    top: 0
+    right: 0
+    display: none
+    color: $orange
+    padding: 15px 10px 10px
+  #full_desc
+    background: $white
+    width: 1000px
+    display: inline-block
+    height: 100%
+    text-align: left
+    padding: 20px
+    color: $dark_grey
+    font-family: 'Lucida Sans', Arial, sans-serif
+    overflow-y: auto
+    h1
+      color: $white
+      font-family: 'Lato', sans-serif
+      font-size: 44px
+      font-weight: 300
+      margin: -20px -20px 28px
+      background-color: $dark_grey
+      border-top: 5px solid $orange
+      padding: 5px
+    h2
+      color: $orange
+      font-family: 'Lato', sans-serif
+      font-size: 24px
+      font-weight: 300
+      margin: 0 0 10px
+    ul
+      display: inline-block
+      margin-bottom: 20px
+      li
+        margin-bottom: 5px
+    li:before
+      content: "• "
+      color: $orange
+      margin-right: 5px
+      font-size: 22px
+    p
+      font-size: 16px
+      line-height: 26px
+      text-indent: 30px
+      margin: 0
+      margin-bottom: 20px
+    a
+      color: $orange
+      text-decoration: underline
+      &:hover
+        color: $white
+    figure
+      font-size: 12px
+      text-align: center
+      margin-bottom: 20px
+    .spacer
+      height: 50px
+.sidebar
+  position: fixed
+  left: 0
+  height: 100%
+  background-color: $grey
+  width: 230px
+  text-align: center
+  border-right: solid 5px $dark_grey
+  .logo
+    background-color: $dark_grey
+    margin-top: 70px
+    padding: 10px
+    border-right: solid 5px $orange
+    margin-right: -5px
+    img
+      height: 100px
+.bottom_links
+  position: absolute
+  bottom: 10px
+  color: $white
+  width: 100%
+  text-align: center
+  a
+    margin-right: 5px
+    text-decoration: none
+    color: $white
+    position: relative
+    span
+      position: absolute
+      bottom: 25px
+      left: -60px
+      display: none
+      width: 150px
+      text-align: center
+    &:hover > span
+      display: block
+    &:hover > i
+      color: $orange
+.copyright
+  position: absolute
+  bottom: 10px
+  color: #777
+  text-align: center
+  left: 50%
+.projects_wrapper
+  margin-left: 230px
+  text-align: center
+.projects
+  margin: 0 auto
+  display: inline-block
+  text-align: left
+  padding: 30px 0 30px 0
+  max-width: 1540px
+.pjct_wrapper
+  height: 300px
+  width: 500px
+  margin: 10px 5px 10px 5px
+  display: inline-block
+  position: relative
+  .icons
+    width: 62px
+    position: absolute
+    left: 0
+    margin-top: 4px
+    li
+      border: solid 1px
+      border-left: solid 5px
+      border-right: solid 0px
+      height: 57px
+      margin-bottom: 5px
+      &.php
+        border-color: #288ad6
+        background: $white url("/img/icons.png") 0 0
+      &.python
+        border-color: #3672a5
+        background: $white url("/img/icons.png") -57px 0
+      &.nodejs
+        border-color: #59c92e
+        background: $white url("/img/icons.png") 114px 0
+      &.bootstrap
+        border-color: #50337f
+        background: $white url("/img/icons.png") 57px 0
+      &.mongo
+        border-color: #388c2b
+        background: $white url("/img/icons.png") 0 57px
+      &.gcloud
+        border-color: #f4b400
+        background: $white url("/img/icons.png") -57px 57px
+      &.angularjs
+        border-color: #e52a3a
+        background: $white url("/img/icons.png") -114px 57px
+      &.jquery
+        border-color: #55bcfd
+        background: $white url("/img/icons.png") 114px 57px
+      &.ruby
+        border-color: #c82038
+        background: $white url("/img/icons.png") -114px 0
+      &.mysql
+        border-color: #004d6b
+        background: $white url("/img/icons.png") 57px 57px
+  .pjct_cover
+    height: 100%
+    margin-left: 62px
+    position: relative
+    cursor: pointer
+    .pjct_title
+      height: 23px
+      background-color: rgba(47, 47, 47, 0.6)
+      color: $white
+      font-size: 18px
+      padding: 5px 0 0 10px
+      border-top: solid $orange 4px
+    .pjct_desc
+      background-color: $grey
+      color: $white
+      width: 416px
+      font-size: 18px
+      position: absolute
+      bottom: 0
+      overflow-y: hidden
+      max-height: 0
+      padding: 0px 10px
+      transition-property: all
+      transition-duration: .5s
+    &:hover .pjct_desc
+      max-height: 200px
+      padding: 10px 10px
+.bio
+  color: $white
+  font-size: 16px
+  padding: 0 10px
+  margin-top: 20px
+.face
+  margin-top: 30px
+  font-size: 20px
+  font-style: normal
+  color: $orange
+@media screen and (max-width: 1785px)
+  .projects
+    max-width: 1025px
+@media screen and (max-width: 1285px)
+  .projects
+    max-width: 510px
+  #full_desc
+    width: 800px !important
+@media screen and (max-width: 825px)
+  #full_desc
+    width: 100% !important
+  #exit_desc
+    display: block !important
+  .projects_wrapper
+    margin-left: 0
+  .projects
+    margin-top: 123px
+  .sidebar
+    position: absolute
+    left: auto
+    top: 0
+    height: 123px
+    background-color: $grey
+    width: 100%
+    text-align: left
+    border-right: solid 5px $dark_grey
+    .bottom_links
+      position: fixed
+      right: 10px
+      top: 10px
+      bottom: auto
+      width: 16px
+      a
+        line-height: 25px
+        margin-top: 5px
+        position: static
+        text-align: left
+        &:hover > span
+          display: none
+    .logo
+      background-color: $dark_grey
+      margin: 0
+      padding: 10px
+      border-right: none
+      border-bottom: solid 5px $orange
+      margin-right: 0
+      margin-bottom: -5px
+      width: 140px
+      text-align: center
+      display: inline-block
+      img
+        height: 100px
+    .bio
+      display: inline-block
+      font-size: 16px
+      padding: 0 10px
+      font-style: italic
+      max-width: 200px
+      text-align: center
+      margin-left: 10px
+      margin-top: 0
+      padding-bottom: 15px
+      overflow-y: auto
+    .face
+      margin-top: 0
+      margin-left: 10px
+      text-align: center
+      max-width: 100px
+      display: inline-block
+      img
+        height: 85px
+        width: 85px

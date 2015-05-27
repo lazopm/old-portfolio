@@ -1,0 +1,249 @@
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
+/* http://meyerweb.com/eric/tools/css/reset/
+ * v2.0 | 20110126
+ * License: none (public domain) */
+/* line 5, ../sass/_reset.sass */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 26, ../sass/_reset.sass */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 30, ../sass/_reset.sass */
+body {
+  line-height: 1;
+}
+
+/* line 33, ../sass/_reset.sass */
+ol, ul {
+  list-style: none;
+}
+
+/* line 36, ../sass/_reset.sass */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 39, ../sass/_reset.sass */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* line 44, ../sass/_reset.sass */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: "ProximaNova";
+  src: url("/font/ProximaNova.otf");
+}
+
+@-webkit-keyframes typing {
+  /* line 2, ../sass/_mixins.sass */
+  from {
+    width: 0em;
+  }
+}
+
+@-moz-keyframes typing {
+  /* line 5, ../sass/_mixins.sass */
+  from {
+    width: 0em;
+  }
+}
+
+@-webkit-keyframes blink-caret {
+  /* line 8, ../sass/_mixins.sass */
+  from, to {
+    border-color: transparent;
+  }
+
+  /* line 10, ../sass/_mixins.sass */
+  50% {
+    border-color: #edaf49;
+  }
+}
+
+@-moz-keyframes blink-caret {
+  /* line 14, ../sass/_mixins.sass */
+  from, to {
+    border-color: transparent;
+  }
+
+  /* line 16, ../sass/_mixins.sass */
+  50% {
+    border-color: #edaf49;
+  }
+}
+
+@-moz-keyframes appear {
+  /* line 19, ../sass/_mixins.sass */
+  from, to {
+    visibility: hidden;
+  }
+
+  /* line 21, ../sass/_mixins.sass */
+  0% {
+    visibility: visible;
+  }
+}
+
+@-webkit-keyframes appear {
+  /* line 24, ../sass/_mixins.sass */
+  from, to {
+    visibility: hidden;
+  }
+
+  /* line 26, ../sass/_mixins.sass */
+  0% {
+    visibility: visible;
+  }
+}
+
+/* line 7, ../sass/index0.sass */
+html, body {
+  height: 100%;
+}
+
+/* line 9, ../sass/index0.sass */
+body {
+  font-family: ProximaNova, sans-serif;
+  background-color: #333333;
+}
+
+/* line 12, ../sass/index0.sass */
+.wrapper {
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+/* line 18, ../sass/index0.sass */
+.main_logo {
+  margin-top: -150px;
+}
+
+/* line 20, ../sass/index0.sass */
+.main_content {
+  text-align: left;
+  margin-top: 50px;
+  position: relative;
+  padding: 10px;
+  background-color: #2a2a2a;
+}
+/* line 26, ../sass/index0.sass */
+.main_content p {
+  color: #f1f1f1;
+  font-size: 30px;
+  font-family: Inconsolata;
+}
+/* line 30, ../sass/index0.sass */
+.main_content p a {
+  color: #edaf49;
+  text-decoration: none;
+}
+/* line 33, ../sass/index0.sass */
+.main_content .type1 {
+  width: 7.6em;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.1em solid transparent;
+  -moz-animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+  -webkit-animation: typing 1s steps(15, end), blink-caret 0.5s step-end 4;
+  -moz-animation: typing 1s steps(15, end), blink-caret 0.5s step-end 4;
+}
+/* line 42, ../sass/index0.sass */
+.main_content .type2 {
+  width: 8.6em;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.1em solid transparent;
+  visibility: hidden;
+  -webkit-animation: appear 0.5s step-end infinite, typing 1s steps(17, end), blink-caret 0.5s step-end 4;
+  -moz-animation: appear 0.5s step-end infinite, typing 1s steps(17, end), blink-caret 0.5s step-end 4;
+  -moz-animation-delay: 2s;
+  -webkit-animation-delay: 2s;
+}
+/* line 52, ../sass/index0.sass */
+.main_content .type3 {
+  width: 11.4em;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.1em solid transparent;
+  visibility: hidden;
+  -webkit-animation: appear 0.5s step-end infinite, typing 1s steps(23, end), blink-caret 0.5s step-end 2;
+  -moz-animation: appear 0.5s step-end infinite, typing 1s steps(23, end), blink-caret 0.5s step-end 2;
+  -moz-animation-delay: 4s;
+  -webkit-animation-delay: 4s;
+}
+/* line 62, ../sass/index0.sass */
+.main_content .type4 {
+  width: 9.1em;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.1em solid transparent;
+  visibility: hidden;
+  -webkit-animation: appear 0.5s step-end infinite, typing 1s steps(23, end), blink-caret 1s step-end infinite;
+  -moz-animation: appear 0.5s step-end infinite, typing 1s steps(23, end), blink-caret 1s step-end infinite;
+  -moz-animation-delay: 5s;
+  -webkit-animation-delay: 5s;
+}
+
+/* line 72, ../sass/index0.sass */
+.bottom_links {
+  position: absolute;
+  bottom: 0px;
+  color: #f1f1f1;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+}
+/* line 79, ../sass/index0.sass */
+.bottom_links a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #f1f1f1;
+  position: relative;
+}
+/* line 84, ../sass/index0.sass */
+.bottom_links a span {
+  position: absolute;
+  bottom: 40px;
+  left: -55px;
+  display: none;
+  width: 150px;
+  text-align: center;
+}
+/* line 91, ../sass/index0.sass */
+.bottom_links a:hover > span {
+  display: block;
+}

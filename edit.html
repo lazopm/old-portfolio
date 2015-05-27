@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+  <head>
+  </head>
+  <style>
+  .options{
+    display: inline-block;
+    vertical-align: top;
+  }
+  </style>
+  <body>
+    {% if projects %}
+    <form method='GET' enctype="multipart/form-data">
+      <h1>Edit Project</h1>
+      Project:<br><select onchange="this.form.submit()" name="project">
+      <option selected disabled> Select Project </option>
+      {% for project in projects %}
+      <option value='{{ project.key.id() }}'> {{ project.title }} </option>
+      {% endfor %}
+      </select><br><br>
+    </form>
+    {% elif project%}
+    <div class="options">
+    <form method='POST' enctype="multipart/form-data">
+      <h1>Basic Data</h1>
+      <input type="hidden" name="project" value='{{ project.key.id() }}'>
+      Title:<br><input name="title" value="{{project.title}}"></input><br><br>
+      Backend:<br>
+      <input type="checkbox" name="tag" {% if 'python' in project.tags %} checked {% endif %} value="python">Python
+      <input type="checkbox" name="tag" {% if 'ruby' in project.tags %} checked {% endif %} value="ruby">Ruby
+      <input type="checkbox" name="tag" {% if 'nodejs' in project.tags %} checked {% endif %} value="nodejs">NodeJS
+      <input type="checkbox" name="tag" {% if 'gcloud' in project.tags %} checked {% endif %} value="gcloud">Google Cloud
+      <input type="checkbox" name="tag" {% if 'php' in project.tags %} checked {% endif %} value="php">PHP<br><br>
+      Frontend:<br>
+      <input type="checkbox" name="tag" {% if 'bootstrap' in project.tags %} checked {% endif %} value="bootstrap">Bootstrap
+      <input type="checkbox" name="tag" {% if 'angularjs' in project.tags %} checked {% endif %} value="angularjs">AngularJS
+      <input type="checkbox" name="tag" {% if 'jquery' in project.tags %} checked {% endif %} value="jquery">JQuery<br><br>
+      Databases:<br>
+      <input type="checkbox" name="tag" {% if 'mysql' in project.tags %} checked {% endif %} value="mysql">MySQL
+      <input type="checkbox" name="tag" {% if 'mongo' in project.tags %} checked {% endif %} value="mongo">Mongo DB<br><br>
+      Short Description:<br>
+      <textarea rows="4" cols="50" name="desc">{{project.description}}</textarea><br><br>
+      Description (HTML):<br>
+      <textarea rows="4" cols="50" name="fulldesc">{{project.full_description}}</textarea><br>
+      Image example: &lt;img src="name"&gt;.<br><br>
+      <input type="submit">
+    </form>
+  </div>
+
+  <div class="options">
+    <form method='POST' action='changecover' enctype="multipart/form-data">
+      <input type="hidden" name="project" value='{{ project.key.id() }}'>
+      <h1>Project Cover</h1>
+      <img height="100px" src="image?id={{ project.key.id() }}"><br>
+      Cover:<br><input type="file" name="img"/><br><br>
+      <input type="submit">
+    </form>
+    <form method='POST' action='addimg' enctype="multipart/form-data">
+
+      <h1>Project Images</h1>
+      {% for image in images %}
+        <div style="display: inline-block; text-align: center;margin-right:10px">
+        <img height="100px" src="image?id={{ project.key.id()}}&n={{image.name}}"><br>
+        {{image.name}}
+        </div>
+      {% endfor %}
+      <br><br>
+      <input type="hidden" name="project" value='{{ project.key.id() }}'>
+      New Picture:<br><input type="file" name="img"/><br><br>
+      Name:<br><input name="name"></input><br><br>
+      <input type="submit">
+    </form>
+  </div>
+    {% endif %}
+  </body>
+</html>
+{% endautoescape %}
