@@ -1,4 +1,5 @@
-# Applid.com Portfolio
-A very simple google app engine portfolio.
-There is a little control panel where you can manage your projects.
-Projects are stored in the datastore, you can host this using the free quotas.
+# Old Portfolio  
+My old portfolio from 2015.  
+A Google App Engine application written in Python.  
+There is a little control panel to manage projects.  
+Projects are stored on Google Datastore.
